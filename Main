@@ -1,0 +1,54 @@
+public class Televisao
+{
+    // Propriedades privadas
+    private int _canal;
+    private int _ultimoCanal;
+    private int _volume;
+    private bool _mudo;
+
+    // Constantes
+    private const int CanalMinimo = 1;
+    private const int CanalMaximo = 520;
+    private const int VolumeMinimo = 0;
+    private const int VolumeMaximo = 100;
+
+    public float Tamanho { get; private set; }
+
+    // Propriedades públicas controladas
+    public int Canal
+    {
+        get => _canal;
+        private set
+        {
+            if (value >= CanalMinimo && value <= CanalMaximo)
+            {
+                _canal = value;
+                _ultimoCanal = value;
+            }
+        }
+    }
+
+    public int Volume
+    {
+        get => _mudo ? 0 : _volume;
+        set
+        {
+            if (value < VolumeMinimo)
+                _volume = VolumeMinimo;
+            else if (value > VolumeMaximo)
+                _volume = VolumeMaximo;
+            else
+                _volume = value;
+        }
+    }
+
+    public Televisao(float tamanho)
+    {
+        Tamanho = tamanho;
+
+        // Ao ligar, vai para o último canal assistido
+        _ultimoCanal = 1;
+        Canal = _ultimoCanal;
+
+        _volume = 20; // Volume inicial padrão
+        _mudo = false;
