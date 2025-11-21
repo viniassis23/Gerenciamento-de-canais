@@ -1,0 +1,29 @@
+ // ---------------- Regras de Volume ----------------
+
+    public void AumentarVolume()
+    {
+        if (!_mudo && _volume < VolumeMaximo)
+            _volume++;
+    }
+
+    public void DiminuirVolume()
+    {
+        if (!_mudo && _volume > VolumeMinimo)
+            _volume--;
+    }
+
+    public void AtivarMudo()
+    {
+        _mudo = true;
+    }
+
+    public void DesativarMudo()
+    {
+        _mudo = false;
+    }
+
+    public void AlternarMudo()
+    {
+        _mudo = !_mudo;
+    }
+}
