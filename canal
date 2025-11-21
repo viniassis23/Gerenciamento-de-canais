@@ -1,0 +1,24 @@
+// ---------------- Regras de Canal ----------------
+
+    public void IrParaCanal(int numero)
+    {
+        if (numero >= CanalMinimo && numero <= CanalMaximo)
+            Canal = numero;
+    }
+
+    public void AumentarCanal()
+    {
+        if (Canal < CanalMaximo)
+            Canal++;
+    }
+
+    public void DiminuirCanal()
+    {
+        if (Canal > CanalMinimo)
+            Canal--;
+    }
+
+    public void Ligar()
+    {
+        Canal = _ultimoCanal;
+    }
